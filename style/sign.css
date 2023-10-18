@@ -1,0 +1,51 @@
+.container-fluid{
+    width:100%;
+    height: 100vh;
+    background-color: rgb(20, 20, 65);
+
+}
+#formHandle{
+    width:60%;
+    margin: 10rem auto auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.customBtn{
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+    background-color: rgb(20, 20, 65);
+    border: none;
+    color: white;
+}
+.customBtn:hover{
+    color: rgb(20, 20, 65);
+    background-color: white;
+    border: 2px solid rgb(20, 20, 65);
+}
+
+.customback a{
+    text-decoration: none;
+    background-color: rgb(46, 5, 34);
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    margin:2rem;
+    padding: 0.8rem 1rem;
+}
+
+.customback a:hover{
+    color: rgb(20, 20, 65);
+    background-color: white;
+    border: 2px solid rgb(46, 5, 34);
+}
+.formError{
+    font-size: 0.9rem;
+    color: rgb(175, 18, 18);
+}
+@media only screen and (max-width:800px) {
+    #formHandle{
+        width:90%;
+    }
+}

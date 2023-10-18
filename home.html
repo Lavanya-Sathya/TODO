@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO Home</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navHome">
+                <img src="images/logo.jpg" alt="Logo" id="titleLogo">
+                <span id="titleHome">TODO</span>
+             <span><a href="index.html" id="logout">LogOut</a></span>
+        </div>
+    </div>
+    <div class="main">
+        <!-- <div><Span id="error">Error message</Span></div> -->
+
+        <div class="add">
+            <input type="text" id="input" placeholder="Enter the Task" required>
+            <button id="add">ADD</button>
+        </div>
+
+        <div class="display">
+            <ol id="listTable">
+                <li>TODO <button onclick="deleteItem(event)" id="btn">Delete</button></li>
+
+            </ol>
+        </div>
+    </div>
+    <script src="script/todo.js"></script>
+</body>
+</html>
