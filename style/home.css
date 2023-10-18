@@ -23,24 +23,25 @@
     color: white;
 }
 .main{
-    width:50%;
+    width:60%;
     margin:3rem auto;
 }
 .add{
     text-align: center;
+    padding-top:1rem;
 }
 #input{
-    width:40vw;
+    width:70%;
     height:8vh;
     display: block;
     margin:auto;
     border: 2px solid rgb(20, 20, 65);
     border-radius: 1rem;
+    font-size: 1.3rem;
 }
 #add{
     margin-top: 1rem;
     margin-bottom: 2rem;
-
     padding:1rem 3rem;
     border-radius: 1rem;
     background-color: rgb(20, 20, 65);
@@ -55,9 +56,20 @@
 .display{
     margin-top: 1rem;
 }
-
-#listTable li{
+#error{
+    width:50%;
+    display: none;
+    margin:1rem auto 1rem; 
+    padding: 1rem 5rem;
+    text-align: center;
+    background-color:rgba(192, 10, 10,0.8);
     font-size: 1.5rem;
+    color: white;
+    border-radius: 1rem;
+}
+#listTable {
+    margin: auto;
+    font-size: 1.2rem;
     padding-bottom: 0.8rem;
 }
 
@@ -94,5 +106,9 @@
     }
     .main{
         width:90%;
+    }
+    #input{
+        width:90%;
+        height: 5vh;
     }
 }
