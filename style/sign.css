@@ -44,6 +44,9 @@
     font-size: 0.9rem;
     color: rgb(175, 18, 18);
 }
+.icon{
+    display: none;
+}
 @media only screen and (max-width:800px) {
     #formHandle{
         width:90%;
