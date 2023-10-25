@@ -8,6 +8,8 @@ let nameIcon = document.getElementById("name-error-icon");
 let emailIcon = document.getElementById("email-error-icon");
 let passIcon = document.getElementById("pass-error-icon");
 let repassIcon = document.getElementById("repass-error-icon");
+var emailVal = document.getElementById("email");
+let passwordVal = document.getElementById('pwd');
 
 function validateName() {
     var name = document.getElementById("name").value;
@@ -25,7 +27,7 @@ function validateName() {
 }
 
 function validateEmail() {
-    var email = document.getElementById("email").value;
+    var email = emailVal.value;
     emailIcon.style.display="block";
     if (email.length == 0) {
         // emailError.innerHTML = "Email is required";
@@ -43,7 +45,7 @@ function validateEmail() {
 }
 
 function validatePassword() {
-    const password = document.getElementById('pwd').value;
+    const password = passwordVal.value;
     passIcon.style.display="block";
     const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
@@ -91,6 +93,18 @@ function validateForm(){
         
         setTimeout(()=>{messageError.style.display="none";},3000);
         return false;
+    }
+    else{
+        const userName = emailVal.value;
+        const passworsName = passwordVal.value;
+        let data = [
+          {
+            "username": userName,
+            "password": passworsName
+          }
+        ];
+        localStorage.setItem("data", JSON.stringify(data));
+        return true;
     }
     
 }

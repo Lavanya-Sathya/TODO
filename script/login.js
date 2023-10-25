@@ -1,11 +1,12 @@
 let emailError = document.getElementById("email-error");
 let passError = document.getElementById("pass-error");
 let messageError = document.getElementById("submit-error");
+let emailVal = document.getElementById("email");
+let passwordVal = document.getElementById('pwd');
 
 
 function validateEmail() {
-    var email = document.getElementById("email").value;
-
+    let email = emailVal.value;
     if (email.length == 0) {
         emailError.innerHTML = "Email is required";
         return false;
@@ -14,13 +15,13 @@ function validateEmail() {
         emailError.innerHTML = "Email is invalid";
         return false;
     }
-    // emailError.innerHTML = "valid";
+    emailError.innerHTML = "";
     return true;
 
 }
 
 function validatePassword() {
-    const password = document.getElementById('pwd').value;
+    let password = passwordVal.value;
 
     const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
@@ -32,7 +33,7 @@ function validatePassword() {
         passError.innerHTML = 'Password must be at least 8 characters long and include at least one lowercase letter, one uppercase letter, and one digit.';
         return false;
     } 
-    // passError.innerHTML = "Valid";
+    passError.innerHTML = "";
     return true;
 
 }
@@ -44,6 +45,27 @@ function validateForm(){
         
         setTimeout(()=>{messageError.style.display="none";},3000);
         return false;
+    }
+    else{
+        const data = JSON.parse(localStorage.getItem("data")) || [];
+        if(data.length === 0){
+            emailVal.value = "";
+            passwordVal.value = "";
+            alert("Please Sign Up")
+            return false;
+        }
+        else if(emailVal.value === data[0].username && passwordVal.value=== data[0].password){
+            alert("LoggedIn Successfully");
+
+        }
+        else{
+            messageError.style.display="block";
+            messageError.innerHTML="Password and Email doesn't match. Please Check";
+            messageError.style.color = "red";
+            setTimeout(()=>{messageError.style.display="none";},3000);
+            return false;
+        }
+
     }
    
 }
