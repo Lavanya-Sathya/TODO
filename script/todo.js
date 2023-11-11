@@ -56,20 +56,25 @@ function add() {
   //     listElement.style.textDecoration = "line-through";
   //     remove(todo);
   //   });
-  listTable.innerHTML = `<tr id="tableRowBorder">
+  console.log(todos.length);
+  if (todos.length === 0) {
+    listTable.innerHTML = `<h3>Your Todo list is empty</h3>`;
+  } else {
+    listTable.innerHTML = `<tr id="tableRowBorder">
                         <th>Task</th>
                         <th>Date</th>
                         <th>Action</th>
                         </tr>`;
-  listTable.innerHTML += todos
-    .map((x) => {
-      return `<tr><td>${x.task}</td>
+    listTable.innerHTML += todos
+      .map((x) => {
+        return `<tr><td>${x.task}</td>
                   <td>${x.dateTime}</td>
                   <td> <button onclick="editItem(event)" id="btnEdit" value="${x.id}">Edit<i class="bi bi-pencil-square" style="font-size:0.7rem"></i></button>
                   <button onclick="deleteItem(event)" id="btn" value="${x.id}">Delete<i class="bi bi-trash-fill" style="font-size:0.7rem"></i></button></td>
               </tr>`;
-    })
-    .join("");
+      })
+      .join("");
+  }
 }
 // Remove list element
 function deleteItem(event) {
