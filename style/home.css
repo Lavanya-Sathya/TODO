@@ -1,114 +1,122 @@
-.navHome{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
-    padding: 0rem 1rem
+.navHome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  padding: 0rem 1rem;
 }
-#titleLogo{
-    width:3.84rem;
-    height:3.84rem;
-    border-radius: 50%;
-    padding: 1rem 1rem;
+#titleLogo {
+  width: 3.84rem;
+  height: 3.84rem;
+  border-radius: 50%;
+  padding: 1rem 1rem;
 }
-#titleHome{
-    font-size: 3rem;
-
+#titleHome {
+  font-size: 3rem;
 }
-#logout{
-    text-decoration: none;
-    font-size: 1.5rem;
+#logout {
+  text-decoration: none;
+  font-size: 1.5rem;
 }
-#logout:hover{
-    color: white;
+#logout:hover {
+  color: white;
 }
-.main{
-    width:60%;
-    margin:3rem auto;
+.main {
+  width: 60%;
+  margin: 3rem auto;
 }
-.add{
-    text-align: center;
-    padding-top:1rem;
+.add {
+  text-align: center;
+  padding-top: 1rem;
 }
-#input{
-    width:70%;
-    height:8vh;
-    display: block;
-    margin:auto;
-    border: 2px solid rgb(20, 20, 65);
-    border-radius: 1rem;
-    font-size: 1.3rem;
+#input {
+  width: 70%;
+  height: 8vh;
+  display: block;
+  margin: auto;
+  border: 2px solid rgb(20, 20, 65);
+  border-radius: 1rem;
+  font-size: 1.3rem;
 }
-#add{
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    padding:1rem 3rem;
-    border-radius: 1rem;
-    background-color: rgb(20, 20, 65);
-    border:none;
-    color: white;
+#add {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  background-color: rgb(20, 20, 65);
+  border: none;
+  color: white;
 }
-#add:hover{
-    color: rgb(20, 20, 65);
-    background-color: white;
-    border: 2px solid rgb(20, 20, 65);
+#add:hover {
+  color: rgb(20, 20, 65);
+  background-color: white;
+  border: 2px solid rgb(20, 20, 65);
 }
-.display{
-    margin-top: 1rem;
+.display {
+  margin-top: 1rem;
 }
-#error{
-    width:50%;
-    display: none;
-    margin:1rem auto 1rem; 
-    padding: 1rem 5rem;
-    text-align: center;
-    background-color:rgba(192, 10, 10,0.8);
-    font-size: 1.5rem;
-    color: white;
-    border-radius: 1rem;
+#error {
+  width: 50%;
+  display: none;
+  margin: 1rem auto 1rem;
+  padding: 1rem 5rem;
+  text-align: center;
+  background-color: rgba(192, 10, 10, 0.8);
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 1rem;
 }
 #listTable {
-    margin: auto;
-    font-size: 1.2rem;
-    padding-bottom: 0.8rem;
+  margin: auto;
+  font-size: 1.2rem;
+  padding-bottom: 0.8rem;
 }
 
-#btn{
-    padding:0.5rem 1rem;
-    margin-left: 2rem;
-    border:none;
-    color:white;
-    background-color: rgb(85, 10, 10);
-    border-radius: 1rem;
+#btn,
+#btnEdit {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin-left: 2rem;
+  border: none;
+  color: white;
+  background-color: rgb(85, 10, 10);
+  border-radius: 1rem;
 }
-#btn:hover{
-    color: rgb(85, 10, 10);
-    background-color: white;
-    border: 2px solid rgb(85, 10, 10);
+#btnEdit {
+  background-color: rgb(4, 4, 49);
 }
-@media only screen and (max-width:500px){
-    .navHome{
-        padding: 0;
-    }
-    #titleLogo{
-        width:2.84rem;
-        height:2.84rem;
-        padding: 1rem 0.5rem;
-    }
-    #titleHome{
-        font-size: 2rem;
-    
-    }
-    #logout{
-        text-decoration: none;
-        font-size: 1rem;
-        padding-right: 0.5rem;
-    }
-    .main{
-        width:90%;
-    }
-    #input{
-        width:90%;
-        height: 5vh;
-    }
+#btn:hover {
+  color: rgb(85, 10, 10);
+  background-color: white;
+  border: 2px solid rgb(85, 10, 10);
+}
+#btnEdit:hover {
+  color: rgb(4, 4, 49);
+  background-color: white;
+  border: 2px solid rgb(4, 4, 49);
+}
+@media only screen and (max-width: 500px) {
+  .navHome {
+    padding: 0;
+  }
+  #titleLogo {
+    width: 2.84rem;
+    height: 2.84rem;
+    padding: 1rem 0.5rem;
+  }
+  #titleHome {
+    font-size: 2rem;
+  }
+  #logout {
+    text-decoration: none;
+    font-size: 1rem;
+    padding-right: 0.5rem;
+  }
+  .main {
+    width: 90%;
+  }
+  #input {
+    width: 90%;
+    height: 5vh;
+  }
 }
