@@ -39,6 +39,7 @@
   font-size: 1.3rem;
 }
 #add {
+  cursor: pointer;
   margin-top: 1rem;
   margin-bottom: 2rem;
   padding: 1rem 3rem;
@@ -46,11 +47,11 @@
   background-color: rgb(20, 20, 65);
   border: none;
   color: white;
+  border: 2px solid rgb(20, 20, 65);
 }
 #add:hover {
   color: rgb(20, 20, 65);
   background-color: white;
-  border: 2px solid rgb(20, 20, 65);
 }
 .display {
   margin-top: 1rem;
@@ -59,10 +60,10 @@
   width: 50%;
   display: none;
   margin: 1rem auto 1rem;
-  padding: 1rem 5rem;
+  padding: 0.7rem 3rem;
   text-align: center;
-  background-color: rgba(192, 10, 10, 0.8);
-  font-size: 1.5rem;
+  background-color: rgba(173, 32, 32, 0.8);
+  font-size: 1rem;
   color: white;
   border-radius: 1rem;
 }
@@ -71,29 +72,33 @@
   font-size: 1.2rem;
   padding-bottom: 0.8rem;
 }
-
+tr {
+  margin: 1rem 0;
+}
+td,
+th {
+  padding: 0.24rem 0.5rem;
+  text-align: left;
+}
+#tableRowBorder > th {
+  border-bottom: 3px solid rgb(25, 11, 77);
+}
 #btn,
 #btnEdit {
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  margin-left: 2rem;
   border: none;
-  color: white;
-  background-color: rgb(85, 10, 10);
-  border-radius: 1rem;
-}
-#btnEdit {
-  background-color: rgb(4, 4, 49);
-}
-#btn:hover {
+  font-size: 1.2rem;
   color: rgb(85, 10, 10);
   background-color: white;
-  border: 2px solid rgb(85, 10, 10);
+}
+#btnEdit {
+  color: rgb(4, 4, 49);
+}
+#btn:hover {
+  color: rgb(167, 75, 75);
 }
 #btnEdit:hover {
-  color: rgb(4, 4, 49);
-  background-color: white;
-  border: 2px solid rgb(4, 4, 49);
+  color: rgb(72, 72, 143);
 }
 @media only screen and (max-width: 500px) {
   .navHome {

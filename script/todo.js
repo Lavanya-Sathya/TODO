@@ -56,36 +56,38 @@ function add() {
   //     listElement.style.textDecoration = "line-through";
   //     remove(todo);
   //   });
-
-  listTable.innerHTML = todos
+  listTable.innerHTML = `<tr id="tableRowBorder">
+                        <th>Task</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                        </tr>`;
+  listTable.innerHTML += todos
     .map((x) => {
       return `<tr><td>${x.task}</td>
-    <td>${x.dateTime}</td>
-    <td> <button onclick="editItem(event)" id="btnEdit" value="${x.id}">Edit</button></td>
-    <td> <button onclick="deleteItem(event)" id="btn" value="${x.id}">Delete</button></td></tr>`;
+                  <td>${x.dateTime}</td>
+                  <td> <button onclick="editItem(event)" id="btnEdit" value="${x.id}">Edit<i class="bi bi-pencil-square" style="font-size:0.7rem"></i></button>
+                  <button onclick="deleteItem(event)" id="btn" value="${x.id}">Delete<i class="bi bi-trash-fill" style="font-size:0.7rem"></i></button></td>
+              </tr>`;
     })
     .join("");
-}
-// Remove Array value
-function remove(todo) {
-  let index = todos.indexOf(todo);
-  if (index >= 0) {
-    todos.splice(index, 1);
-  }
-  localStorage.setItem("todos", JSON.stringify(todos));
 }
 // Remove list element
 function deleteItem(event) {
   const todoId = event.target.value;
-  //   remove(todoId);
-  //   event.target.parentElement.parentElement.remove();
-  const index = todos.findIndex((x) => x.id === todoId);
-  if (index !== -1) {
-    const removeTask = todos.filter((x) => x.id !== todoId);
-    localStorage.setItem("todos", JSON.stringify(removeTask));
-    todos = removeTask;
-    alert("Task Deleted Successfully");
-    add();
+  const confirmDelete = confirm("Are you Sure, you want to delete the task?");
+  if (confirmDelete) {
+    const index = todos.findIndex((x) => x.id === todoId);
+    if (index !== -1) {
+      const removeTask = todos.filter((x) => x.id !== todoId);
+      localStorage.setItem("todos", JSON.stringify(removeTask));
+      todos = removeTask;
+      errorMessage.innerHTML = "Task Deleted Successfully";
+      errorMessage.style.display = "block";
+      setTimeout(() => {
+        errorMessage.style.display = "none";
+      }, 4000);
+      add();
+    }
   }
 }
 
