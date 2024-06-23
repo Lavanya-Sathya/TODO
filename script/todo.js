@@ -2,12 +2,10 @@ let input = document.getElementById("input");
 let addValue = document.getElementById("add");
 let listTable = document.getElementById("listTable");
 let errorMessage = document.getElementById("error");
+let todoEditData = null;
 
-// let todos = [];
-// window.onload = () => {
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
-// todos.forEach((todo) => add(todo));
-// };
+
 addValue.addEventListener("click", () => {
   if (addValue.innerHTML === "ADD") {
     if (input.value == "") {
@@ -42,21 +40,16 @@ addValue.addEventListener("click", () => {
       add();
       input.value = "";
     }
+  } else if (addValue.innerHTML === "Edit") {
+    todoEditData.task = input.value;
+    localStorage.setItem("todos", JSON.stringify(todos));
+    add();
+    addValue.innerText = "ADD";
+    input.value = "";
+    alert("Task updated Successfully");
   }
 });
 function add() {
-  //   let listElement = document.createElement("tr");
-  //   listElement.innerHTML = `<td>${todo.task}</td>
-  //   <td>${todo.dateTime}</td>
-  //   <td> <button onclick="editItem(event)" id="btnEdit" value="${todo.id}">Edit</button></td>
-  //   <td> <button onclick="deleteItem(event)" id="btn" value="${todo.task}">Delete</button></td>`;
-  //   listTable.append(listElement);
-
-  //   listElement.addEventListener("click", () => {
-  //     listElement.style.textDecoration = "line-through";
-  //     remove(todo);
-  //   });
-  // console.log(todos.length);
   if (todos.length === 0) {
     listTable.innerHTML = `<h3>Your Todo list is empty</h3>`;
   } else {
@@ -97,7 +90,7 @@ function deleteItem(event) {
 }
 
 // Edit Task
-let todoEditData = null;
+
 function editItem(event) {
   const todoEditId = event.target.value;
   // console.log(todoEditId);
@@ -108,16 +101,5 @@ function editItem(event) {
     addValue.innerText = "Edit";
   }
 }
-addValue.addEventListener("click", () => {
-  console.log("todoEditData: " + todoEditData);
-  if (addValue.innerHTML === "Edit") {
-    todoEditData.task = input.value;
-    // console.log(`todoAfterEdit:${todoEditData.task}`);
-    localStorage.setItem("todos", JSON.stringify(todos));
-    add();
-    addValue.innerText = "ADD";
-    input.value = "";
-    alert("Task updated Successfully");
-  }
-});
+
 add();
